@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/txt_position_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="25dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="@string/pos_label"/>
+
+    <RadioGroup
+        android:id="@+id/radio_frag_position"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/txt_position_label"
+        app:layout_constraintLeft_toLeftOf="@id/txt_position_label">
+        <RadioButton
+            android:id="@+id/radiobtn_top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="@string/pos_top"/>
+        <RadioButton
+            android:id="@+id/radiobtn_bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/pos_bottom"/>
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/txt_actions_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        app:layout_constraintLeft_toLeftOf="@id/txt_position_label"
+        app:layout_constraintTop_toBottomOf="@id/radio_frag_position"
+        app:layout_constraintBottom_toTopOf="@id/radio_frag_actions"
+        android:text="@string/act_label"/>
+
+    <RadioGroup
+        android:id="@+id/radio_frag_actions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/txt_actions_label"
+        app:layout_constraintLeft_toLeftOf="@id/txt_actions_label">
+        <RadioButton
+            android:id="@+id/radiobtn_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/act_add_random"
+            android:checked="true"/>
+        <RadioButton
+            android:id="@+id/radiobtn_replace_red"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/act_rep_red"/>
+        <RadioButton
+            android:id="@+id/radiobtn_replace_green"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/act_rep_green"/>
+        <RadioButton
+            android:id="@+id/radiobtn_remove"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/act_remove"/>
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btn_update"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/radio_frag_actions"
+        app:layout_constraintLeft_toLeftOf="@id/radio_frag_actions"
+        app:layout_constraintBottom_toTopOf="@id/frm_top_fragment_holder"
+        android:text="@string/button_label"
+        android:onClick="updateFragments"/>
+
+    <FrameLayout
+        android:id="@+id/frm_top_fragment_holder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_update"
+        app:layout_constraintBottom_toTopOf="@id/frm_bottom_fragment_holder"/>
+
+    <FrameLayout
+        android:id="@+id/frm_bottom_fragment_holder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="50dp"
+        android:layout_margin="20dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/frm_top_fragment_holder"
+        android:textAlignment="center"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
